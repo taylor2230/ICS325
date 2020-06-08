@@ -1,0 +1,38 @@
+/*
+Only for lab3 CSS
+*/
+
+.lab3 {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-flow: column;
+  box-sizing: border-box;
+  width: 15%;
+  min-width:200px;
+}
+
+.calc {
+  height: 25px;
+  width:100%;
+}
+.lab3-label, .lab3-result {
+  font-size: 14px;
+}
+.calc-submit {
+  margin-top: 10px;
+  margin-right: 10px;
+  position: relative;
+  width:80px;
+  height: 35px;
+  border: none;
+}
+.calc-submit:hover {
+  box-shadow: 0 2px 4px 1px lightgray;
+  animation: 1.5s zoomer infinite;
+}
+
+@keyframes zoomer {
+  1% {transform: scale(1)}
+  50% {transform: scale(1.1)}
+  100% {transform: scale(1)}
+}

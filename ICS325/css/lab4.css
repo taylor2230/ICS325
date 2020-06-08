@@ -1,0 +1,30 @@
+/*
+CSS only for lab4
+*/
+
+.lab4-form {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-flow: column;
+  box-sizing: border-box;
+  width: 25%;
+  top: 10px;
+}
+
+.lab4-upload {
+  font-size: 12px;
+}
+.lab4-submit {
+  margin-top: 10px;
+  margin-right: 10px;
+  position: relative;
+  width:80px;
+  height: 35px;
+  border: none;
+}
+
+.lab4-submit:hover {
+  box-shadow: 0 2px 4px 1px lightgray;
+  animation: 1.5s zoomer infinite;
+}

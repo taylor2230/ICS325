@@ -1,0 +1,37 @@
+/*
+page content has been split from core
+*/
+.page-content {
+    position: relative;
+    margin-top: 16px;
+    margin-left: 38px;
+    padding-left: 5px;
+    width: 95%;
+    height: 80%;
+    box-shadow: 0 2px 4px 1px lightgray;
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+}
+.content-header {
+   padding-top: 5px;
+   font-size: 20px;
+}
+.content-text {
+    padding-top: 6px;
+    padding-left: 6px;
+    font-size: 14px;
+}
+.content-img {
+    padding-top: 6px;
+    padding-left: 6px;  
+}
+
+@keyframes pageRight {
+    0% {left: 0}
+    100% {left: 100px; width: 85%}
+}
+
+@keyframes pageLeft {
+    0% {left:100px; width: 85%}
+    100% {left:0; width: 95%}
+}
