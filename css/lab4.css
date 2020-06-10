@@ -8,7 +8,7 @@ CSS only for lab4
   flex-wrap: nowrap;
   flex-flow: column;
   box-sizing: border-box;
-  width: 25%;
+  width: 100%;
   top: 10px;
 }
 
@@ -27,4 +27,22 @@ CSS only for lab4
 .lab4-submit:hover {
   box-shadow: 0 2px 4px 1px lightgray;
   animation: 1.5s zoomer infinite;
+}
+
+table {
+  border-collapse: collapse;
+}
+table * {
+  font-size: 12px;
+  padding: 2px;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+table td:first-child {
+    border-left: none;
+}
+
+table td:last-child {
+    border-right: none;
 }
