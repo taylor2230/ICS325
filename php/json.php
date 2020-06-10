@@ -28,7 +28,13 @@ class Json
             foreach ($this->json[$i] as $k => $v) {
                 $html .= "<tr>";
                 $html .= "<td>" . $k . "</td>";
-                $html .= $this->serialize($v);
+                if(is_array($v)) {
+                    $html .= "<td><table>";
+                    $html .= $this->iterateArray(null, $v);
+                    $html .= "</table></td>";
+                } else {
+                    $html .= "<td>" . $v . "</td>";
+                }
                 $html .= "</tr>";
             }
         }
@@ -37,37 +43,14 @@ class Json
         print $html;
     }
 
-    function serialize($value)
-    {
-        $html = "";
-
-        if(is_array($value)) {
-            $html .= "<td><table>";
-            $html .= $this->iterateArray(null, $value);
-            $html .= "</table></td>";
-        } else {
-            $html .= "<td>" . $value . "</td>";
-        }
-
-        return $html;
-    }
-
     function iterateArray($k, $v)
     {
         $temp = "";
-        if(is_array($v)) {
-            foreach ($v as $item => $subItem) {
-                if(!is_numeric($item)) {
-                    $temp .= $this->iterateArray($item, $subItem);
-                } else {
-                    $temp .= $this->iterateArray(null, $subItem);
-                }
-            }
+        if(is_array($v)) foreach ($v as $item => $subItem) {
+            $temp = !is_numeric($item) ? $temp . $this->iterateArray($item, $subItem) : $temp . $this->iterateArray(null, $subItem);
         } else {
             $temp .= "<tr>";
-            if($k !== null) {
-                $temp .= "<td>" . $k . "</td>";
-            }
+            if($k !== null) $temp .= "<td>" . $k . "</td>";
             $temp .= "<td>" . $v . "</td>";
             $temp .= "</tr>";
         }
