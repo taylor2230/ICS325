@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/ICS325/php/vehicle.php';
-//include '/home/students/ics325su20/ics325su2028/public_html/php/vehicle.php';
+//include $_SERVER['DOCUMENT_ROOT'].'/ICS325/php/vehicle.php';
+include '/home/students/ics325su20/ics325su2028/public_html/php/vehicle.php';
 
 function lab5() {
     $foo = new car("car");
